@@ -84,6 +84,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 3rem;
 }
 
 .logo {
@@ -93,6 +94,7 @@ header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding-right: 2rem;
 }
 
 .logo::before {
