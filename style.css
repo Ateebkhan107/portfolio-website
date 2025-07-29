@@ -64,6 +64,11 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Enhanced Header with Icons */
@@ -215,6 +220,18 @@ header {
     z-index: 2;
 }
 
+/* Improve container responsiveness */
+@media (max-width: 1200px) {
+    .hero-container,
+    .about-content,
+    .education-grid,
+    .projects-grid,
+    .achievements-grid {
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+}
+
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -330,6 +347,23 @@ header {
     padding-top: 6rem;
 }
 
+/* Improve section spacing for better visual hierarchy */
+.section:nth-child(even) {
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.section:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.3;
+}
+
 .section:nth-child(even) {
     background: var(--bg-secondary);
 }
@@ -388,8 +422,8 @@ header {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
 .skill-card {
@@ -595,22 +629,31 @@ header {
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .project-link {
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     border: 2px solid var(--primary-color);
     border-radius: var(--border-radius);
     text-decoration: none;
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+    justify-content: center;
 }
 
 .project-link:hover {
-    background: var(--primary-color);
+    background: var(--gradient-primary);
     color: var(--text-white);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
 }
 
 /* Enhanced Achievements Section */
@@ -998,6 +1041,17 @@ footer {
     .education-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Improve mobile project links */
+    .project-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .project-link {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Large Mobile Phones */
@@ -1033,6 +1087,20 @@ footer {
         width: 45px;
         height: 45px;
         font-size: 1rem;
+    }
+    
+    /* Improve small screen spacing */
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .card-padding {
+        padding: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 
