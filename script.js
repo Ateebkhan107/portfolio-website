@@ -118,7 +118,10 @@ function initContactForm() {
 
 // Send email via backend API
 async function sendEmail(name, email, phone, message) {
-    const response = await fetch('/api/contact', {
+    // Replace with your actual backend URL after deployment
+    const backendUrl = 'https://portfolio-website-zikp.onrender.com'; // Update this with your actual URL
+    
+    const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
