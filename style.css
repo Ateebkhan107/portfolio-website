@@ -82,6 +82,7 @@ header {
     z-index: 1000;
     box-shadow: var(--shadow-lg);
     transition: all 0.3s ease;
+    height: 80px; /* Fixed header height */
 }
 
 .header-container {
@@ -92,6 +93,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
+    height: 100%;
 }
 
 .logo {
@@ -194,7 +196,8 @@ header {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px; /* Add padding to account for fixed header */
+    padding-top: 120px; /* Increased padding to prevent header overlap */
+    margin-top: 0;
 }
 
 #hero::before {
@@ -344,7 +347,7 @@ header {
 
 /* Ensure first section after header has proper spacing */
 .section:first-of-type {
-    padding-top: 6rem;
+    padding-top: 8rem;
 }
 
 /* Improve section spacing for better visual hierarchy */
@@ -554,7 +557,7 @@ header {
     border-radius: var(--border-radius-lg);
     border: 2px solid var(--border-light);
     box-shadow: var(--shadow-md);
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.3s ease;
     position: relative;
 }
@@ -563,6 +566,7 @@ header {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
     border-color: var(--accent-color);
+    z-index: 5;
 }
 
 .project-image {
@@ -595,6 +599,8 @@ header {
 
 .project-content {
     padding: var(--card-padding);
+    position: relative;
+    z-index: 1;
 }
 
 .project-content h3 {
@@ -630,6 +636,7 @@ header {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .project-link {
@@ -646,6 +653,8 @@ header {
     gap: 0.5rem;
     min-width: 120px;
     justify-content: center;
+    position: relative;
+    z-index: 10;
 }
 
 .project-link:hover {
@@ -1008,11 +1017,11 @@ footer {
     
     /* Adjust hero padding for mobile */
     #hero {
-        padding-top: 70px;
+        padding-top: 100px;
     }
     
     .section:first-of-type {
-        padding-top: 4rem;
+        padding-top: 6rem;
     }
     
     .navigation.active a {
@@ -1046,11 +1055,13 @@ footer {
     .project-links {
         flex-direction: column;
         gap: 0.8rem;
+        margin-top: 1rem;
     }
     
     .project-link {
         width: 100%;
         justify-content: center;
+        z-index: 20;
     }
 }
 
@@ -1102,6 +1113,15 @@ footer {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    
+    /* Fix hero padding for small screens */
+    #hero {
+        padding-top: 90px;
+    }
+    
+    .section:first-of-type {
+        padding-top: 5rem;
+    }
 }
 
 /* Small Mobile Phones */
@@ -1130,6 +1150,15 @@ footer {
     .card-padding {
         padding: 1.5rem;
     }
+    
+    /* Fix hero padding for extra small screens */
+    #hero {
+        padding-top: 80px;
+    }
+    
+    .section:first-of-type {
+        padding-top: 4rem;
+    }
 }
 
 /* Extra Small Mobile Phones */
@@ -1147,6 +1176,15 @@ footer {
     .btn-secondary {
         padding: 0.7rem 1.2rem;
         font-size: 0.8rem;
+    }
+    
+    /* Fix hero padding for very small screens */
+    #hero {
+        padding-top: 70px;
+    }
+    
+    .section:first-of-type {
+        padding-top: 3rem;
     }
 }
 
